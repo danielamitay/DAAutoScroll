@@ -37,6 +37,7 @@
     // Do any additional setup after loading the view from its nib.
     self.title = @"Text View";
     
+    textView.delegate = self;
     [textView startScrolling];
 }
 
@@ -51,6 +52,19 @@
 {
     // Return YES for supported orientations
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
+{
+    if (!decelerate)
+    {
+        [textView startScrolling];
+    }
+}
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+{
+    [textView startScrolling];
 }
 
 @end

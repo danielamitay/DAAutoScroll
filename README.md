@@ -32,6 +32,8 @@ For UITextView:
 
 Subclass either via code or Interface Builder.
 
+To restart scrolling after user interaction, you need to support the UIScrollView delegate methods 'scrollViewDidEndDragging:' and 'scrollViewDidEndDecelerating:', and call `startScrolling` again. The example does this by default.
+
 ### Automatic Reference Counting (ARC) support
 DAAutoScroll was made with ARC enabled by default.
 

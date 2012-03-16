@@ -10,7 +10,7 @@
 
 #import "DAAutoTextView.h"
 
-@interface TextViewController : UIViewController
+@interface TextViewController : UIViewController <UITextViewDelegate>
 
 @property (nonatomic, strong) IBOutlet DAAutoTextView *textView;
 

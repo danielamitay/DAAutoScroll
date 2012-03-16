@@ -46,6 +46,19 @@
     [(DAAutoTableView *)self.view startScrolling];
 }
 
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
+{
+    if (!decelerate)
+    {
+        [(DAAutoTableView *)self.view startScrolling];
+    }
+}
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+{
+    [(DAAutoTableView *)self.view startScrolling];
+}
+
 - (void)viewDidUnload
 {
     [super viewDidUnload];
