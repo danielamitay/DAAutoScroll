@@ -8,14 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
+#define DAAutoScrollViewNotificationStoped @"DAAutoScrollViewNotificationStoped"
+
 @interface DAAutoScrollView : UIScrollView
 {
     NSTimer *_scrollTimer;
 }
 
 @property (nonatomic) CGFloat pointsPerSecond;
-
+@property (nonatomic, getter = isScrolling) BOOL scrolling;
 - (void)startScrolling;
-- (void)stopScrolling;
+- (void)stopScrolling: (BOOL) postNotification;
 
 @end
