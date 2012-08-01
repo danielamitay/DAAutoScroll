@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		207C53D615C9958F0055F338 /* DAAutoScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 207C53D115C9958F0055F338 /* DAAutoScrollView.m */; };
+		207C53D715C9958F0055F338 /* DAAutoTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 207C53D315C9958F0055F338 /* DAAutoTableView.m */; };
+		207C53D815C9958F0055F338 /* DAAutoTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 207C53D515C9958F0055F338 /* DAAutoTextView.m */; };
 		63DFB67814E9C6B100B050DA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63DFB67714E9C6B100B050DA /* UIKit.framework */; };
 		63DFB67A14E9C6B100B050DA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63DFB67914E9C6B100B050DA /* Foundation.framework */; };
 		63DFB67C14E9C6B100B050DA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63DFB67B14E9C6B100B050DA /* CoreGraphics.framework */; };
@@ -15,9 +18,6 @@
 		63DFB68814E9C6B100B050DA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 63DFB68714E9C6B100B050DA /* AppDelegate.m */; };
 		63DFB68B14E9C6B100B050DA /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63DFB68A14E9C6B100B050DA /* MasterViewController.m */; };
 		63DFB69114E9C6B100B050DA /* MasterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63DFB68F14E9C6B100B050DA /* MasterViewController.xib */; };
-		63DFB69D14E9DFDD00B050DA /* DAAutoTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 63DFB69C14E9DFDD00B050DA /* DAAutoTableView.m */; };
-		63DFB6A014E9DFFC00B050DA /* DAAutoScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 63DFB69F14E9DFFC00B050DA /* DAAutoScrollView.m */; };
-		63DFB6A314E9E03F00B050DA /* DAAutoTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 63DFB6A214E9E03F00B050DA /* DAAutoTextView.m */; };
 		63DFB6AB14E9E69000B050DA /* TextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63DFB6A914E9E69000B050DA /* TextViewController.m */; };
 		63DFB6AC14E9E69000B050DA /* TextViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63DFB6AA14E9E69000B050DA /* TextViewController.xib */; };
 		63DFB6B014E9E6BF00B050DA /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63DFB6AE14E9E6BF00B050DA /* TableViewController.m */; };
@@ -25,6 +25,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		207C53D015C9958F0055F338 /* DAAutoScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAAutoScrollView.h; sourceTree = "<group>"; };
+		207C53D115C9958F0055F338 /* DAAutoScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAAutoScrollView.m; sourceTree = "<group>"; };
+		207C53D215C9958F0055F338 /* DAAutoTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAAutoTableView.h; sourceTree = "<group>"; };
+		207C53D315C9958F0055F338 /* DAAutoTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAAutoTableView.m; sourceTree = "<group>"; };
+		207C53D415C9958F0055F338 /* DAAutoTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAAutoTextView.h; sourceTree = "<group>"; };
+		207C53D515C9958F0055F338 /* DAAutoTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAAutoTextView.m; sourceTree = "<group>"; };
 		63DFB67314E9C6B100B050DA /* DAAutoScrollExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DAAutoScrollExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63DFB67714E9C6B100B050DA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		63DFB67914E9C6B100B050DA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -38,12 +44,6 @@
 		63DFB68914E9C6B100B050DA /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
 		63DFB68A14E9C6B100B050DA /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
 		63DFB69014E9C6B100B050DA /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MasterViewController.xib; sourceTree = "<group>"; };
-		63DFB69B14E9DFDD00B050DA /* DAAutoTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAAutoTableView.h; sourceTree = "<group>"; };
-		63DFB69C14E9DFDD00B050DA /* DAAutoTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAAutoTableView.m; sourceTree = "<group>"; };
-		63DFB69E14E9DFFC00B050DA /* DAAutoScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAAutoScrollView.h; sourceTree = "<group>"; };
-		63DFB69F14E9DFFC00B050DA /* DAAutoScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAAutoScrollView.m; sourceTree = "<group>"; };
-		63DFB6A114E9E03F00B050DA /* DAAutoTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAAutoTextView.h; sourceTree = "<group>"; };
-		63DFB6A214E9E03F00B050DA /* DAAutoTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAAutoTextView.m; sourceTree = "<group>"; };
 		63DFB6A814E9E69000B050DA /* TextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextViewController.h; sourceTree = "<group>"; };
 		63DFB6A914E9E69000B050DA /* TextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextViewController.m; sourceTree = "<group>"; };
 		63DFB6AA14E9E69000B050DA /* TextViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextViewController.xib; sourceTree = "<group>"; };
@@ -127,12 +127,12 @@
 		63DFB69A14E9DF8600B050DA /* DAAutoScroll */ = {
 			isa = PBXGroup;
 			children = (
-				63DFB69B14E9DFDD00B050DA /* DAAutoTableView.h */,
-				63DFB69C14E9DFDD00B050DA /* DAAutoTableView.m */,
-				63DFB69E14E9DFFC00B050DA /* DAAutoScrollView.h */,
-				63DFB69F14E9DFFC00B050DA /* DAAutoScrollView.m */,
-				63DFB6A114E9E03F00B050DA /* DAAutoTextView.h */,
-				63DFB6A214E9E03F00B050DA /* DAAutoTextView.m */,
+				207C53D015C9958F0055F338 /* DAAutoScrollView.h */,
+				207C53D115C9958F0055F338 /* DAAutoScrollView.m */,
+				207C53D215C9958F0055F338 /* DAAutoTableView.h */,
+				207C53D315C9958F0055F338 /* DAAutoTableView.m */,
+				207C53D415C9958F0055F338 /* DAAutoTextView.h */,
+				207C53D515C9958F0055F338 /* DAAutoTextView.m */,
 			);
 			name = DAAutoScroll;
 			path = ../DAAutoScroll;
@@ -206,11 +206,11 @@
 				63DFB68414E9C6B100B050DA /* main.m in Sources */,
 				63DFB68814E9C6B100B050DA /* AppDelegate.m in Sources */,
 				63DFB68B14E9C6B100B050DA /* MasterViewController.m in Sources */,
-				63DFB69D14E9DFDD00B050DA /* DAAutoTableView.m in Sources */,
-				63DFB6A014E9DFFC00B050DA /* DAAutoScrollView.m in Sources */,
-				63DFB6A314E9E03F00B050DA /* DAAutoTextView.m in Sources */,
 				63DFB6AB14E9E69000B050DA /* TextViewController.m in Sources */,
 				63DFB6B014E9E6BF00B050DA /* TableViewController.m in Sources */,
+				207C53D615C9958F0055F338 /* DAAutoScrollView.m in Sources */,
+				207C53D715C9958F0055F338 /* DAAutoTableView.m in Sources */,
+				207C53D815C9958F0055F338 /* DAAutoTextView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
