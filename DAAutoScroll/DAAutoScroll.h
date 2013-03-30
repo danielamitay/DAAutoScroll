@@ -13,4 +13,7 @@
 @property (nonatomic) CGFloat scrollPointsPerSecond;
 @property (nonatomic) BOOL scrolling;
 
+- (void)startScrolling;
+- (void)stopScrolling;
+
 @end

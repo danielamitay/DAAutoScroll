@@ -20,23 +20,41 @@ static char UIScrollViewAutoScrollTimer;
 
 @implementation UIScrollView (DAAutoScroll)
 
+- (void)startScrolling
+{
+    [self stopScrolling];
+    
+    CGFloat animationDuration = (0.5f / self.scrollPointsPerSecond);
+    self.autoScrollTimer = [NSTimer scheduledTimerWithTimeInterval:animationDuration
+                                                            target:self
+                                                          selector:@selector(incrementAutoScroll)
+                                                          userInfo:nil
+                                                           repeats:YES];
+}
+
+- (void)stopScrolling
+{
+    [self.autoScrollTimer invalidate];
+    self.autoScrollTimer = nil;
+}
+
 #pragma mark - Property Methods
 
 - (void)setScrolling:(BOOL)scrolling
 {
     if (scrolling)
     {
-        //  Start scrolling
+        [self startScrolling];
     }
     else
     {
-        //  Stop scrolling
+        [self stopScrolling];
     }
 }
 
 - (BOOL)scrolling
 {
-    return FALSE;
+    return (BOOL)self.autoScrollTimer;
 }
 
 - (CGFloat)scrollPointsPerSecond
