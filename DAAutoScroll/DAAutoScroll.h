@@ -10,4 +10,7 @@
 
 @interface UIScrollView (DAAutoScroll)
 
+@property (nonatomic) CGFloat scrollPointsPerSecond;
+@property (nonatomic) BOOL scrolling;
+
 @end

@@ -8,6 +8,12 @@
 
 #import "UIScrollView+DA.h"
 
+@interface UIScrollView (DAAutoScroll_Internal)
+
+@property (nonatomic, strong) NSTimer *autoScrollTimer;
+
+@end
+
 @implementation UIScrollView (DAAutoScroll)
 
 @end
