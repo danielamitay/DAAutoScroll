@@ -22,6 +22,7 @@
 		63DFB6AC14E9E69000B050DA /* TextViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63DFB6AA14E9E69000B050DA /* TextViewController.xib */; };
 		63DFB6B014E9E6BF00B050DA /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63DFB6AE14E9E6BF00B050DA /* TableViewController.m */; };
 		63DFB6B114E9E6BF00B050DA /* TableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63DFB6AF14E9E6BF00B050DA /* TableViewController.xib */; };
+		63E97C3B170902AB004B1933 /* DAAutoScroll.m in Sources */ = {isa = PBXBuildFile; fileRef = 63E97C3A170902AB004B1933 /* DAAutoScroll.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,8 @@
 		63DFB6AD14E9E6BF00B050DA /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
 		63DFB6AE14E9E6BF00B050DA /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
 		63DFB6AF14E9E6BF00B050DA /* TableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewController.xib; sourceTree = "<group>"; };
+		63E97C39170902AB004B1933 /* DAAutoScroll.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAAutoScroll.h; sourceTree = "<group>"; };
+		63E97C3A170902AB004B1933 /* DAAutoScroll.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAAutoScroll.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +130,8 @@
 		63DFB69A14E9DF8600B050DA /* DAAutoScroll */ = {
 			isa = PBXGroup;
 			children = (
+				63E97C39170902AB004B1933 /* DAAutoScroll.h */,
+				63E97C3A170902AB004B1933 /* DAAutoScroll.m */,
 				207C53D015C9958F0055F338 /* DAAutoScrollView.h */,
 				207C53D115C9958F0055F338 /* DAAutoScrollView.m */,
 				207C53D215C9958F0055F338 /* DAAutoTableView.h */,
@@ -211,6 +216,7 @@
 				207C53D615C9958F0055F338 /* DAAutoScrollView.m in Sources */,
 				207C53D715C9958F0055F338 /* DAAutoTableView.m in Sources */,
 				207C53D815C9958F0055F338 /* DAAutoTextView.m in Sources */,
+				63E97C3B170902AB004B1933 /* DAAutoScroll.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
