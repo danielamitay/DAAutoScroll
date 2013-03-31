@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 Daniel Amitay. All rights reserved.
 //
 
-#import "UIScrollView+DA.h"
+#import "DAAutoScroll.h"
 
 static CGFloat UIScrollViewDefaultScrollPointsPerSecond = 15.0f;
 static char UIScrollViewScrollPointsPerSecondNumber;
