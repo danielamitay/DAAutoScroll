@@ -7,6 +7,7 @@
 //
 
 #import "DAAutoScroll.h"
+#import <objc/runtime.h>
 
 static CGFloat UIScrollViewDefaultScrollPointsPerSecond = 15.0f;
 static char UIScrollViewScrollPointsPerSecondNumber;
