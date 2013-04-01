@@ -35,6 +35,10 @@ static char UIScrollViewAutoScrollTimer;
 
 - (void)incrementAutoScroll
 {
+    if (!self.window)
+    {
+        [self stopScrolling];
+    }
     CGFloat animationDuration = self.autoScrollTimer.timeInterval;
     CGFloat pointChange = self.scrollPointsPerSecond * animationDuration;
     CGPoint newOffset = self.contentOffset;
