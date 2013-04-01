@@ -7,6 +7,7 @@
 //
 
 #import "TextViewController.h"
+#import "DAAutoScroll.h"
 
 @implementation TextViewController
 
@@ -54,9 +55,29 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+- (void)textViewDidBeginEditing:(UITextView *)aTextView
+{
+    [textView stopScrolling];
+}
+
+- (void)textViewDidEndEditing:(UITextView *)aTextView
+{
+    [textView startScrolling];
+}
+
+- (BOOL)textView:(UITextView *)aTextView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
+{
+    if ([text isEqualToString:@"\n"])
+    {
+        [textView resignFirstResponder];
+        return NO;
+    }
+    return YES;
+}
+
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
 {
-    if (!decelerate)
+    if (!decelerate && !textView.isFirstResponder)
     {
         [textView startScrolling];
     }
@@ -64,7 +85,10 @@
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
 {
-    [textView startScrolling];
+    if (!textView.isFirstResponder)
+    {
+        [textView startScrolling];
+    }
 }
 
 @end

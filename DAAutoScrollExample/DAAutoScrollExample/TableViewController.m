@@ -8,7 +8,7 @@
 
 #import "TableViewController.h"
 
-#import "DAAutoTableView.h"
+#import "DAAutoScroll.h"
 
 @implementation TableViewController
 
@@ -42,21 +42,21 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    [(DAAutoTableView *)self.view setPointsPerSecond:90.0f];
-    [(DAAutoTableView *)self.view startScrolling];
+    self.tableView.scrollPointsPerSecond = 90.0f;
+    [self.tableView startScrolling];
 }
 
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
 {
     if (!decelerate)
     {
-        [(DAAutoTableView *)self.view startScrolling];
+        [self.tableView startScrolling];
     }
 }
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
 {
-    [(DAAutoTableView *)self.view startScrolling];
+    [self.tableView startScrolling];
 }
 
 - (void)viewDidUnload

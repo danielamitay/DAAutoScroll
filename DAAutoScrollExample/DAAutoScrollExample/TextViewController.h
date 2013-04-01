@@ -8,10 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-#import "DAAutoTextView.h"
-
 @interface TextViewController : UIViewController <UITextViewDelegate>
 
-@property (nonatomic, strong) IBOutlet DAAutoTextView *textView;
+@property (nonatomic, strong) IBOutlet UITextView *textView;
 
 @end
