@@ -33,6 +33,27 @@ static char UIScrollViewAutoScrollTimer;
                                                            repeats:YES];
 }
 
+- (void)incrementAutoScroll
+{
+    CGFloat animationDuration = self.autoScrollTimer.timeInterval;
+    CGFloat pointChange = self.scrollPointsPerSecond * animationDuration;
+    CGPoint newOffset = self.contentOffset;
+    newOffset.y = newOffset.y + pointChange;
+    
+    if (newOffset.y > (self.contentSize.height - self.bounds.size.height))
+    {
+        [self stopScrolling];
+    }
+    else
+    {
+        [UIView beginAnimations:nil context:nil];
+        [UIView setAnimationDuration:animationDuration];
+        self.contentOffset = newOffset;
+        [UIView commitAnimations];
+    }
+}
+
+
 - (void)stopScrolling
 {
     [self.autoScrollTimer invalidate];
