@@ -1,58 +1,39 @@
 ## DAAutoScroll
 
-DAAutoScroll is a collection of UIScrollView subclasses that allows a UIScrollView (or similar) to automatically scroll itself with adjustable speed. When the user interacts with the view, the scrolling automatically stops.
+`DAAutoScroll` is a `UIScrollView` category that allows any chosen `UIScrollView` (or subclass thereof) to automatically scroll itself with adjustable speed. When the user interacts with the view, the scrolling automatically stops.
 
 View the included example project for a demonstration.
 
 ## Installation
 
-To use DAAutoScroll:
-
-1 - Copy over the `DAAutoScroll` folder to your project folder.
-2 - Subclass.
-Optional - Customize.
+- Copy over the `DAAutoScroll` folder to your project folder.
+- `#import "DAAutoScroll.h"`
 
 ## Usage
-Wherever you want to use DAAutoScroll, import the appropriate header file and subclass as follows:
 
-For UIScrollView:
-```
-' #import "DAAutoScrollView.h" '
-```
+Example project included (DAAutoScrollExample)
 
-For UITableView:
-```
-' #import "DAAutoTableView.h" '
-```
-
-For UITextView:
-```
-' #import "DAAutoTextView.h" '
-```
-
-Subclass either via code or Interface Builder.
-
-To restart scrolling after user interaction, you need to support the UIScrollView delegate methods 'scrollViewDidEndDragging:' and 'scrollViewDidEndDecelerating:', and call `startScrolling` again. The example does this by default.
+To restart scrolling after user interaction, you need to support the `UIScrollView` delegate methods `scrollViewDidEndDragging:` and `scrollViewDidEndDecelerating:`, and call `startScrolling` again. The example does this by default.
 
 ### Automatic Reference Counting (ARC) support
-DAAutoScroll was made with ARC enabled by default.
+
+`DAAutoScroll` was made with ARC enabled by default.
 
 ## Contact
 
-- [Personal website](http://www.amitay.us)
+- [Personal website](http://danielamitay.com)
 - [GitHub](http://github.com/danielamitay)
 - [Twitter](http://twitter.com/danielamitay)
 - [LinkedIn](http://www.linkedin.com/in/danielamitay)
-- [Hacker News](http://news.ycombinator.com/user?id=danielamitay)
-- [Email](daniel@amitay.us)
+- [Email](mailto:hello@danielamitay.com)
 
-If you use/enjoy DAAutoScroll, let me know!
+If you use/enjoy `DAAutoScroll`, let me know!
 
 ## License
 
 ### MIT License
 
-Copyright (c) 2012 Daniel Amitay (http://www.amitay.us)
+Copyright (c) 2013 Daniel Amitay (http://www.danielamitay.com)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
