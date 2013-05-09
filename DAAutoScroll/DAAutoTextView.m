@@ -12,13 +12,16 @@
 
 @synthesize pointsPerSecond = _pointsPerSecond;
 @synthesize scrolling = _scrolling;
-- (void)willMoveToWindow:(UIWindow *)newWindow {
+- (void)willMoveToWindow:(UIWindow *)newWindow
+{
     [super willMoveToWindow:newWindow];
-    if(newWindow) {
+    if(newWindow)
+    {
         [self.panGestureRecognizer addTarget:self action:@selector(gestureDidChange:)];
         [self.pinchGestureRecognizer addTarget:self action:@selector(gestureDidChange:)];
     }
-    else {
+    else
+    {
         [self stopScrolling: YES];
         [self.panGestureRecognizer removeTarget:self action:@selector(gestureDidChange:)];
         [self.pinchGestureRecognizer removeTarget:self action:@selector(gestureDidChange:)];
@@ -27,15 +30,20 @@
 
 #pragma mark - Touch methods
 
-- (BOOL)touchesShouldBegin:(NSSet *)touches withEvent:(UIEvent *)event inContentView:(UIView *)view {
+- (BOOL)touchesShouldBegin:(NSSet *)touches withEvent:(UIEvent *)event inContentView:(UIView *)view
+{
     [self stopScrolling: YES];
     return [super touchesShouldBegin:touches withEvent:event inContentView:view];
 }
 
-- (void)gestureDidChange:(UIGestureRecognizer *)gesture {
-    switch (gesture.state) {
-        case UIGestureRecognizerStateBegan: {
-            if([self isScrolling]){
+- (void)gestureDidChange:(UIGestureRecognizer *)gesture
+{
+    switch (gesture.state)
+    {
+        case UIGestureRecognizerStateBegan:
+        {
+            if([self isScrolling])
+            {
                 [self stopScrolling: YES];
             }
             break;
@@ -45,24 +53,27 @@
     }
 }
 
-- (BOOL)becomeFirstResponder {
+- (BOOL)becomeFirstResponder
+{
     [self stopScrolling: YES];
     return [super becomeFirstResponder];
 }
 
 #pragma mark - Property methods
 
-- (CGFloat)pointsPerSecond {
+- (CGFloat)pointsPerSecond
+{
     if (!_pointsPerSecond)
-     {
+    {
         _pointsPerSecond = 15.0f;
-     }
+    }
     return _pointsPerSecond;
 }
 
 #pragma mark - Public methods
 
-- (void)startScrolling {
+- (void)startScrolling
+{
     [self stopScrolling: NO];
     self.scrolling = YES;
     CGFloat animationDuration = (0.5f / self.pointsPerSecond);
@@ -73,25 +84,31 @@
                                                    repeats:YES];
 }
 
-- (void)stopScrolling: (BOOL) postNotification {
+- (void)stopScrolling: (BOOL) postNotification
+{
     if(postNotification)
+    {
         [[NSNotificationCenter defaultCenter] postNotificationName:DAAutoTextViewNotificationStoped
                                                             object:nil];
+    }
     [_scrollTimer invalidate];
     _scrollTimer = nil;
     self.scrolling = NO;
 }
 
-- (void)updateScroll {
+- (void)updateScroll
+{
     CGFloat animationDuration = _scrollTimer.timeInterval;
     CGFloat pointChange = self.pointsPerSecond * animationDuration;
     CGPoint newOffset = self.contentOffset;
     newOffset.y = newOffset.y + pointChange;
     
-    if (newOffset.y > (self.contentSize.height - self.bounds.size.height)) {
+    if (newOffset.y > (self.contentSize.height - self.bounds.size.height))
+    {
         [self stopScrolling: YES];
     }
-    else {
+    else
+    {
         [UIView beginAnimations:nil context:nil];
         [UIView setAnimationDuration:animationDuration];
         self.contentOffset = newOffset;
