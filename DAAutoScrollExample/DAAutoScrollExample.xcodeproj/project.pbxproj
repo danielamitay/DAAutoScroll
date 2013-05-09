@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		207C53D615C9958F0055F338 /* DAAutoScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 207C53D115C9958F0055F338 /* DAAutoScrollView.m */; };
-		207C53D715C9958F0055F338 /* DAAutoTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 207C53D315C9958F0055F338 /* DAAutoTableView.m */; };
-		207C53D815C9958F0055F338 /* DAAutoTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 207C53D515C9958F0055F338 /* DAAutoTextView.m */; };
 		639BEBD7173B427500BBA289 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 639BEBD6173B427500BBA289 /* Default-568h@2x.png */; };
 		63DFB67814E9C6B100B050DA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63DFB67714E9C6B100B050DA /* UIKit.framework */; };
 		63DFB67A14E9C6B100B050DA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63DFB67914E9C6B100B050DA /* Foundation.framework */; };
@@ -27,12 +24,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		207C53D015C9958F0055F338 /* DAAutoScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAAutoScrollView.h; sourceTree = "<group>"; };
-		207C53D115C9958F0055F338 /* DAAutoScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAAutoScrollView.m; sourceTree = "<group>"; };
-		207C53D215C9958F0055F338 /* DAAutoTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAAutoTableView.h; sourceTree = "<group>"; };
-		207C53D315C9958F0055F338 /* DAAutoTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAAutoTableView.m; sourceTree = "<group>"; };
-		207C53D415C9958F0055F338 /* DAAutoTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAAutoTextView.h; sourceTree = "<group>"; };
-		207C53D515C9958F0055F338 /* DAAutoTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAAutoTextView.m; sourceTree = "<group>"; };
 		639BEBD6173B427500BBA289 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
 		63DFB67314E9C6B100B050DA /* DAAutoScrollExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DAAutoScrollExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63DFB67714E9C6B100B050DA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -135,12 +126,6 @@
 			children = (
 				63E97C39170902AB004B1933 /* DAAutoScroll.h */,
 				63E97C3A170902AB004B1933 /* DAAutoScroll.m */,
-				207C53D015C9958F0055F338 /* DAAutoScrollView.h */,
-				207C53D115C9958F0055F338 /* DAAutoScrollView.m */,
-				207C53D215C9958F0055F338 /* DAAutoTableView.h */,
-				207C53D315C9958F0055F338 /* DAAutoTableView.m */,
-				207C53D415C9958F0055F338 /* DAAutoTextView.h */,
-				207C53D515C9958F0055F338 /* DAAutoTextView.m */,
 			);
 			name = DAAutoScroll;
 			path = ../DAAutoScroll;
@@ -217,9 +202,6 @@
 				63DFB68B14E9C6B100B050DA /* MasterViewController.m in Sources */,
 				63DFB6AB14E9E69000B050DA /* TextViewController.m in Sources */,
 				63DFB6B014E9E6BF00B050DA /* TableViewController.m in Sources */,
-				207C53D615C9958F0055F338 /* DAAutoScrollView.m in Sources */,
-				207C53D715C9958F0055F338 /* DAAutoTableView.m in Sources */,
-				207C53D815C9958F0055F338 /* DAAutoTextView.m in Sources */,
 				63E97C3B170902AB004B1933 /* DAAutoScroll.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
