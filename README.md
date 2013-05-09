@@ -7,7 +7,7 @@ View the included example project for a demonstration.
 ## Installation
 
 - Copy over the `DAAutoScroll` folder to your project folder.
-- `#import "DAAutoScroll.h"`
+- `#import "DAAutoScroll.h"` where desired
 
 ## Usage
 
