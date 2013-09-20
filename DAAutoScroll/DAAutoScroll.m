@@ -50,10 +50,12 @@ static char UIScrollViewAutoScrollTimer;
     }
     else
     {
-        [UIView beginAnimations:nil context:nil];
-        [UIView setAnimationDuration:animationDuration];
-        self.contentOffset = newOffset;
-        [UIView commitAnimations];
+        [UIView animateWithDuration:animationDuration
+                              delay:0.0f
+                            options:UIViewAnimationOptionAllowUserInteraction
+                         animations:^{
+                             self.contentOffset = newOffset;
+                         } completion:nil];
     }
 }
 
