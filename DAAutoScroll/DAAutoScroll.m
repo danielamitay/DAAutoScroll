@@ -41,8 +41,10 @@ static char UIScrollViewAutoScrollTimer;
     }
     CGFloat animationDuration = self.autoScrollTimer.timeInterval;
     CGFloat pointChange = self.scrollPointsPerSecond * animationDuration;
-    CGPoint newOffset = self.contentOffset;
-    newOffset.y = newOffset.y + pointChange;
+    CGPoint newOffset = (CGPoint) {
+        .x = self.contentOffset.x,
+        .y = self.contentOffset.y + pointChange
+    };
     
     if (newOffset.y > (self.contentSize.height - self.bounds.size.height))
     {
