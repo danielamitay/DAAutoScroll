@@ -35,10 +35,10 @@ static char UIScrollViewAutoScrollTimer;
 
 - (void)incrementAutoScroll
 {
-    if (!self.window)
-    {
+    if (!self.window) {
         [self stopScrolling];
     }
+    
     CGFloat animationDuration = self.autoScrollTimer.timeInterval;
     CGFloat pointChange = self.scrollPointsPerSecond * animationDuration;
     CGPoint newOffset = (CGPoint) {
@@ -46,12 +46,9 @@ static char UIScrollViewAutoScrollTimer;
         .y = self.contentOffset.y + pointChange
     };
     
-    if (newOffset.y > (self.contentSize.height - self.bounds.size.height))
-    {
+    if (newOffset.y > (self.contentSize.height - self.bounds.size.height)) {
         [self stopScrolling];
-    }
-    else
-    {
+    } else {
         [UIView animateWithDuration:animationDuration
                               delay:0.0f
                             options:UIViewAnimationOptionAllowUserInteraction
@@ -60,7 +57,6 @@ static char UIScrollViewAutoScrollTimer;
                          } completion:nil];
     }
 }
-
 
 - (void)stopScrolling
 {
@@ -72,12 +68,9 @@ static char UIScrollViewAutoScrollTimer;
 
 - (void)setScrolling:(BOOL)scrolling
 {
-    if (scrolling)
-    {
+    if (scrolling) {
         [self startScrolling];
-    }
-    else
-    {
+    } else {
         [self stopScrolling];
     }
 }
@@ -89,14 +82,10 @@ static char UIScrollViewAutoScrollTimer;
 
 - (CGFloat)scrollPointsPerSecond
 {
-    NSNumber *scrollPointsPerSecondNumber = objc_getAssociatedObject(self,
-                                                                     &UIScrollViewScrollPointsPerSecondNumber);
-    if (scrollPointsPerSecondNumber)
-    {
+    NSNumber *scrollPointsPerSecondNumber = objc_getAssociatedObject(self, &UIScrollViewScrollPointsPerSecondNumber);
+    if (scrollPointsPerSecondNumber) {
         return [scrollPointsPerSecondNumber floatValue];
-    }
-    else
-    {
+    } else {
         return UIScrollViewDefaultScrollPointsPerSecond;
     }
 }
@@ -113,8 +102,7 @@ static char UIScrollViewAutoScrollTimer;
 
 - (NSTimer *)autoScrollTimer
 {
-    return objc_getAssociatedObject(self,
-                                    &UIScrollViewAutoScrollTimer);
+    return objc_getAssociatedObject(self, &UIScrollViewAutoScrollTimer);
 }
 
 - (void)setAutoScrollTimer:(NSTimer *)autoScrollTimer
