@@ -25,7 +25,7 @@ static char UIScrollViewAutoScrollTimer;
 {
     [self stopScrolling];
     
-    CGFloat scale = (self.window.screen.scale ? self.window.screen.scale : [UIScreen mainScreen].scale);
+    CGFloat scale = (self.window ? self.window.screen.scale : [UIScreen mainScreen].scale);
     CGFloat animationDuration = (1.0f / (self.scrollPointsPerSecond * scale));
     self.autoScrollTimer = [NSTimer scheduledTimerWithTimeInterval:animationDuration
                                                             target:self
@@ -36,7 +36,7 @@ static char UIScrollViewAutoScrollTimer;
 
 - (void)incrementAutoScroll
 {
-    if (!self.window) {
+    if (self.window == nil) {
         [self stopScrolling];
     }
     
@@ -47,7 +47,8 @@ static char UIScrollViewAutoScrollTimer;
         .y = self.contentOffset.y + pointChange
     };
     
-    if (newOffset.y > (self.contentSize.height - self.bounds.size.height)) {
+    CGFloat maximumYOffset = self.contentSize.height - self.bounds.size.height;
+    if (newOffset.y > maximumYOffset) {
         [self stopScrolling];
     } else {
         [UIView animateWithDuration:animationDuration
