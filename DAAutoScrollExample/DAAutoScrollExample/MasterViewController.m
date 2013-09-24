@@ -16,16 +16,10 @@
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self)
-    {
+    if (self) {
         self.title = NSLocalizedString(@"Master", @"Master");
     }
     return self;
-}
-							
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
 }
 
 #pragma mark - View lifecycle
@@ -54,16 +48,13 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
-    
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil)
-    {
+    if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
     
-    switch (indexPath.row)
-    {
+    switch (indexPath.row) {
         case 0:
             cell.textLabel.text = @"TableView Example";
             break;
@@ -81,8 +72,7 @@
 {
     UIViewController *controller = nil;
     
-    switch (indexPath.row)
-    {
+    switch (indexPath.row) {
         case 0:
             controller = [[TableViewController alloc] initWithNibName:@"TableViewController" bundle:nil];
             break;

@@ -41,8 +41,7 @@
 
 - (BOOL)textView:(UITextView *)aTextView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
 {
-    if ([text isEqualToString:@"\n"])
-    {
+    if ([text isEqualToString:@"\n"]) {
         [textView resignFirstResponder];
         return NO;
     }
@@ -51,16 +50,14 @@
 
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
 {
-    if (!decelerate && !textView.isFirstResponder)
-    {
+    if (!decelerate && !textView.isFirstResponder) {
         [textView startScrolling];
     }
 }
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
 {
-    if (!textView.isFirstResponder)
-    {
+    if (!textView.isFirstResponder) {
         [textView startScrolling];
     }
 }
