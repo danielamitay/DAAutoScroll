@@ -77,7 +77,7 @@ static char UIScrollViewAutoScrollTimer;
     }
 }
 
-- (BOOL)scrolling
+- (BOOL)isScrolling
 {
     return (self.autoScrollTimer != nil);
 }

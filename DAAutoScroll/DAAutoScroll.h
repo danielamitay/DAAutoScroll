@@ -11,7 +11,7 @@
 @interface UIScrollView (DAAutoScroll)
 
 @property (nonatomic) CGFloat scrollPointsPerSecond;
-@property (nonatomic) BOOL scrolling;
+@property (nonatomic, getter = isScrolling) BOOL scrolling;
 
 - (void)startScrolling;
 - (void)stopScrolling;
