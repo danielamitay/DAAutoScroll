@@ -29,12 +29,18 @@ static char UIScrollViewAutoScrollTimer;
     CGFloat animationDuration = (1.0f / (self.scrollPointsPerSecond * scale));
     self.autoScrollTimer = [NSTimer scheduledTimerWithTimeInterval:animationDuration
                                                             target:self
-                                                          selector:@selector(incrementAutoScroll)
+                                                          selector:@selector(scrollTick)
                                                           userInfo:nil
                                                            repeats:YES];
 }
 
-- (void)incrementAutoScroll
+- (void)stopScrolling
+{
+    [self.autoScrollTimer invalidate];
+    self.autoScrollTimer = nil;
+}
+
+- (void)scrollTick
 {
     if (self.window == nil) {
         [self stopScrolling];
@@ -60,12 +66,6 @@ static char UIScrollViewAutoScrollTimer;
     }
 }
 
-- (void)stopScrolling
-{
-    [self.autoScrollTimer invalidate];
-    self.autoScrollTimer = nil;
-}
-
 #pragma mark - Property Methods
 
 - (void)setScrolling:(BOOL)scrolling
@@ -79,7 +79,7 @@ static char UIScrollViewAutoScrollTimer;
 
 - (BOOL)scrolling
 {
-    return (BOOL)self.autoScrollTimer;
+    return (self.autoScrollTimer != nil);
 }
 
 - (CGFloat)scrollPointsPerSecond
