@@ -8,14 +8,15 @@
 
 #import "DAAutoScroll.h"
 #import <objc/runtime.h>
+#import <QuartzCore/CADisplayLink.h>
 
 static CGFloat UIScrollViewDefaultScrollPointsPerSecond = 15.0f;
 static char UIScrollViewScrollPointsPerSecondNumber;
-static char UIScrollViewAutoScrollTimer;
+static char UIScrollViewAutoScrollDisplayLink;
 
 @interface UIScrollView (DAAutoScroll_Internal)
 
-@property (nonatomic, strong) NSTimer *autoScrollTimer;
+@property (nonatomic, strong) CADisplayLink *autoScrollDisplayLink;
 
 @end
 
@@ -24,45 +25,34 @@ static char UIScrollViewAutoScrollTimer;
 - (void)startScrolling
 {
     [self stopScrolling];
-    
-    CGFloat scale = (self.window ? self.window.screen.scale : [UIScreen mainScreen].scale);
-    CGFloat animationDuration = (1.0f / (self.scrollPointsPerSecond * scale));
-    self.autoScrollTimer = [NSTimer scheduledTimerWithTimeInterval:animationDuration
-                                                            target:self
-                                                          selector:@selector(scrollTick)
-                                                          userInfo:nil
-                                                           repeats:YES];
+
+    self.autoScrollDisplayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(_displayTick:)];
+    [self.autoScrollDisplayLink addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSDefaultRunLoopMode];
 }
 
 - (void)stopScrolling
 {
-    [self.autoScrollTimer invalidate];
-    self.autoScrollTimer = nil;
+    [self.autoScrollDisplayLink invalidate];
+    self.autoScrollDisplayLink = nil;
 }
 
-- (void)scrollTick
+- (void)_displayTick:(CADisplayLink *)displayLink
 {
     if (self.window == nil) {
         [self stopScrolling];
     }
-    
-    CGFloat animationDuration = self.autoScrollTimer.timeInterval;
+
+    CGFloat animationDuration = displayLink.duration;
     CGFloat pointChange = self.scrollPointsPerSecond * animationDuration;
     CGPoint newOffset = (CGPoint) {
         .x = self.contentOffset.x,
         .y = self.contentOffset.y + pointChange
     };
-    
     CGFloat maximumYOffset = self.contentSize.height - self.bounds.size.height;
     if (newOffset.y > maximumYOffset) {
         [self stopScrolling];
     } else {
-        [UIView animateWithDuration:animationDuration
-                              delay:0.0f
-                            options:UIViewAnimationOptionAllowUserInteraction
-                         animations:^{
-                             self.contentOffset = newOffset;
-                         } completion:nil];
+        self.contentOffset = newOffset;
     }
 }
 
@@ -79,7 +69,7 @@ static char UIScrollViewAutoScrollTimer;
 
 - (BOOL)isScrolling
 {
-    return (self.autoScrollTimer != nil);
+    return (self.autoScrollDisplayLink != nil);
 }
 
 - (CGFloat)scrollPointsPerSecond
@@ -102,19 +92,19 @@ static char UIScrollViewAutoScrollTimer;
     [self didChangeValueForKey:@"scrollPointsPerSecond"];
 }
 
-- (NSTimer *)autoScrollTimer
+- (CADisplayLink *)autoScrollDisplayLink
 {
-    return objc_getAssociatedObject(self, &UIScrollViewAutoScrollTimer);
+    return objc_getAssociatedObject(self, &UIScrollViewAutoScrollDisplayLink);
 }
 
-- (void)setAutoScrollTimer:(NSTimer *)autoScrollTimer
+- (void)setAutoScrollDisplayLink:(CADisplayLink *)autoScrollDisplayLink
 {
-    [self willChangeValueForKey:@"autoScrollTimer"];
+    [self willChangeValueForKey:@"autoScrollDisplayLink"];
     objc_setAssociatedObject(self,
-                             &UIScrollViewAutoScrollTimer,
-                             autoScrollTimer,
+                             &UIScrollViewAutoScrollDisplayLink,
+                             autoScrollDisplayLink,
                              OBJC_ASSOCIATION_ASSIGN);
-    [self didChangeValueForKey:@"autoScrollTimer"];
+    [self didChangeValueForKey:@"autoScrollDisplayLink"];
 }
 
 @end

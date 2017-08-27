@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		631E3F421F530D5300FAA33F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 631E3F411F530D5300FAA33F /* QuartzCore.framework */; };
 		639BEBD7173B427500BBA289 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 639BEBD6173B427500BBA289 /* Default-568h@2x.png */; };
 		63DFB67814E9C6B100B050DA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63DFB67714E9C6B100B050DA /* UIKit.framework */; };
 		63DFB67A14E9C6B100B050DA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63DFB67914E9C6B100B050DA /* Foundation.framework */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		631E3F411F530D5300FAA33F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		639BEBD6173B427500BBA289 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
 		63DFB67314E9C6B100B050DA /* DAAutoScrollExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DAAutoScrollExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63DFB67714E9C6B100B050DA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -53,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				631E3F421F530D5300FAA33F /* QuartzCore.framework in Frameworks */,
 				63DFB67814E9C6B100B050DA /* UIKit.framework in Frameworks */,
 				63DFB67A14E9C6B100B050DA /* Foundation.framework in Frameworks */,
 				63DFB67C14E9C6B100B050DA /* CoreGraphics.framework in Frameworks */,
@@ -83,6 +86,7 @@
 		63DFB67614E9C6B100B050DA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				631E3F411F530D5300FAA33F /* QuartzCore.framework */,
 				63DFB67714E9C6B100B050DA /* UIKit.framework */,
 				63DFB67914E9C6B100B050DA /* Foundation.framework */,
 				63DFB67B14E9C6B100B050DA /* CoreGraphics.framework */,
